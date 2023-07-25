@@ -13,7 +13,7 @@ export const signup = async (req, res) => {
     }
     const hashPassword = hash(password)
     const token = generateToken({email},process.env.EMAIL_TOKEN)
-    const link =`http://localhost:3000/auth/confirmEmail/${token}`
+    const link =`https://saraha-task2.onrender.com/auth/confirmEmail/${token}`
     await sendEmail(email,'confirm email',`<a href ="${link}">verify your email </a>`)
     const createUser = await userModel.create({ userName, email, password: hashPassword })
     return res.status(201).json({ message: "done", user: createUser._id })
