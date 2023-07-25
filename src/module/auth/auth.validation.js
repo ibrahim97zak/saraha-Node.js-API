@@ -16,7 +16,7 @@ export const signupScheme =
         gender: joi.string().alphanum().valid('male','female').required()
     }).required(),
     query:joi.object({
-        test:joi.boolean().required(),
+        test:joi.boolean(),
     }).required(),
  }
 
